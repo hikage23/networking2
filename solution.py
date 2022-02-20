@@ -4,7 +4,7 @@ from socket import *
 import sys
 
 
-def webServer(port=9999):
+def webServer(port=13331):
     serverSocket = socket(AF_INET, SOCK_STREAM)
     # Prepare a server socket
     serverSocket.bind(("", port))
@@ -23,7 +23,7 @@ def webServer(port=9999):
                 filename = message.split()[1]
                 f = open(filename[1:])
                 outputdata = f.read()# Fill in start     #Fill in end
-                print(outputdata)
+                #print(outputdata)
 
                 # Send one HTTP header line into socket.
                 # Fill in start
@@ -51,4 +51,4 @@ def webServer(port=9999):
 
 
 if __name__ == "__main__":
-    webServer(9999)
+    webServer(13331)
